@@ -1,0 +1,138 @@
+/* Global container styling */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(120deg, #a8ff78, #78ffd6); /* Gradient background */
+    margin: 0;
+    overflow: hidden;
+    animation: backgroundAnimation 10s ease infinite;
+}
+
+/* Background animation */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Header styling */
+h1 {
+    color: #2c3e50;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Text shadow effect */
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease;
+}
+
+/* Hover effect for the heading */
+h1:hover {
+    color: #e74c3c;
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Button styling */
+button {
+    background: linear-gradient(45deg, #2980b9, #6dd5fa); /* Gradient button */
+    border: none;
+    color: white;
+    padding: 14px 32px;
+    font-size: 18px;
+    margin: 12px;
+    border-radius: 50px; /* Rounded button shape */
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button hover effect with 3D transformation */
+button:hover {
+    transform: translateY(-5px) scale(1.05); /* Button rises and grows on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Button animation for ripple effect */
+button::before {
+    content: "";
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    height: 200%;
+    width: 200%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.6s ease;
+}
+
+button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Active button effect */
+button:active {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Reset button with unique styling */
+button:last-child {
+    background: linear-gradient(45deg, #e74c3c, #ff6b6b);
+}
+
+button:last-child:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: linear-gradient(45deg, #c0392b, #e74c3c);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Button text styling */
+button span {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Button click animation */
+button:active::before {
+    transform: translate(-50%, -50%) scale(1.2);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+        letter-spacing: 1.5px;
+    }
+
+    button {
+        padding: 12px 28px;
+        font-size: 16px;
+        margin: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    button {
+        padding: 10px 24px;
+        font-size: 14px;
+        margin: 6px;
+    }
+}
